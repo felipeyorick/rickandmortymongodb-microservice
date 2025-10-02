@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: rickandmorty
+  name: rickandmorty-deployment
+  namespace: develop
 spec:
   replicas: 1
   selector:
@@ -11,9 +12,18 @@ spec:
     metadata:
       labels:
         app: rickandmorty
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "3000"
+        prometheus.io/path: "/metrics"
     spec:
       containers:
-      - name: rickandmorty
-        image: igorarizadevelop/rickandmorty:latest
-        ports:
-        - containerPort: 3000
+        - name: rickandmorty
+          image: felipeyorick/rickandmorty:v0.0.3
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - secretRef:
+                name: mongo-secret
+ 
+ 
