@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+ 
 const connectDB = async () => {
   try {
     if (!process.env.MONGO_URI || !process.env.MONGO_DB_NAME) {
@@ -16,4 +17,5 @@ const connectDB = async () => {
     process.exit(1);
   }
 };
+ 
 module.exports = connectDB;
