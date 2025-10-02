@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const connectDB = async () => {
   try {
     if (!process.env.MONGO_URI || !process.env.MONGO_DB_NAME) {
