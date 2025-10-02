@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: rickandmorty
-          image: felipeyorick/rickandmorty:2022178feb89d82c1cf57ae8924fa2f783df2a5a
+          image: felipeyorick/rickandmorty:4cd460def7e214336f455259678d72b7a53a7d8b
           ports:
             - containerPort: 3000
           envFrom:
