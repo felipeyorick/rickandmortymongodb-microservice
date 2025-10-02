@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rickandmorty
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rickandmorty
+  template:
+    metadata:
+      labels:
+        app: rickandmorty
+    spec:
+      containers:
+      - name: rickandmorty
+        image: igorarizadevelop/rickandmorty:latest
+        ports:
+        - containerPort: 3000
