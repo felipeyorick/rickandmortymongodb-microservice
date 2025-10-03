@@ -10,4 +10,4 @@ spec:
     - protocol: TCP
       port: 3000        # Puerto expuesto dentro del cluster
       targetPort: 3000  # Puerto del contenedor
-  type: ClusterIP       # Opciones: ClusterIP (default), NodePort, LoadBalancer
+  type: NodePort       # Opciones: ClusterIP (default), NodePort, LoadBalancer
