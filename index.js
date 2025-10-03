@@ -9,7 +9,7 @@ const client = require('prom-client');  // 👈 import prom-client
 const uri_api = "https://rickandmortyapi.com/api/character";
 const app = express();
 app.use(cors({
-  origin: "http://localhost:3000",   // frontend local
+  origin: "*",   // frontend local
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
