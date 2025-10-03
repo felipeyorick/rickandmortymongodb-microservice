@@ -1,3 +1,4 @@
+const cors = require("cors");
 const express = require('express');
 const axios = require('axios');
 const connectDB = require('./db');
@@ -7,6 +8,7 @@ const client = require('prom-client');  // 👈 import prom-client
  
 const uri_api = "https://rickandmortyapi.com/api/character";
 const app = express();
+app.use(cors()); 
 const port = process.env.PORT;
  
 // 📊 Registro global de métricas
@@ -28,7 +30,7 @@ app.use((req, res, next) => {
   });
   next();
 });
- 
+
 connectDB();
  
 app.get('/migrate', async (req, res) => {
